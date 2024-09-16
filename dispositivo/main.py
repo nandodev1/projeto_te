@@ -1,0 +1,1 @@
+from machine import I2Cfrom machine import Pinfrom machine import sleepimport MPU6050import socketi2c = I2C(scl=Pin(4), sda=Pin(5))       #initializing the I2C method for ESP8266mpu= MPU6050.accel(i2c)while True: mpu.get_values() print(mpu.get_values()['AcX'], mpu.get_values()['AcY']) sleep(5)
